@@ -1,13 +1,10 @@
 import os
 
-
 folders = ["Applications", "Documents", "Torrents", "Zip Folders", "Images", "Videos", "Audio Files", "Other Files"]
-fileTypes = ["exe", "pdf", "txt", "torrent", "rar", "jpg", "png", "jpeg", "mov", "mp4", "mp3"]
 
 bool1 = True
 bool2 = True
 i = 0
-
 
 while bool1 == True:
     while bool2 == True:
@@ -49,7 +46,7 @@ while bool1 == True:
                 continue
             if any(file_extension_splitted.lower() == a for a in ["exe", "msi"]):
                 os.rename(p, DOWNLOAD_DIRECTORY + "Applications/" + os.path.basename(p))
-            elif any(file_extension_splitted.lower() == a for a in ["pdf", "txt", "docx", "pptx"]):
+            elif any(file_extension_splitted.lower() == a for a in ["pdf", "txt", "docx", "pptx", "ppt", "xlsx", "xls"]):
                 os.rename(p, DOWNLOAD_DIRECTORY + "Documents/" + os.path.basename(p))
             elif file_extension_splitted.lower() == "torrent":
                 os.rename(p, DOWNLOAD_DIRECTORY + "Torrents/" + os.path.basename(p))
