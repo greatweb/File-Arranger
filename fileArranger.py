@@ -2,7 +2,8 @@ import os
 import json
 import string
 
-folders = ["Applications", "Documents", "Torrents", "Compressed Folders", "Images", "Videos", "Audio Files", "Other Files", "Installers"]
+folders = ["Applications", "Documents", "Torrents", "Compressed Folders", "Images", "Videos", "Audio Files",
+           "Other Files", "Installers"]
 execFileExtensions = json.loads(open('executableFileExtensions.json').read())
 videoFileExtensions = json.loads(open('videoFileExtensions.json').read())
 audioFileExtensions = json.loads(open('audioFileExtensions.json').read())
@@ -77,7 +78,7 @@ while bool1:
     print("Done!", i, "files have been moved!")
 
     for f in folders:
-        print(str(f) , os.stat(f).st_size)
+        print(str(f), os.stat(f).st_size)
 
     for f in folders:
         if os.stat(f).st_size == 0:
